@@ -27,7 +27,8 @@ jobs:
         echo "[default]" > ~/.naver/credentials
         echo "username = " $USERNAME >> ~/.naver/credentials
         echo "password = " $PASSWORD >> ~/.naver/credentials
-        cat ~/.naver/credentials
+        echo "username = " $USERNAME
+        echo "password = " $PASSWORD
         python run_new.py
       env:
         USERNAME: ${{ secrets.ID }} # secret에 저장된 내용을 불러옴
