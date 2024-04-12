@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 base_url = "https://www.clien.net/service/board/jirum"
 
+
 def find_naver_campaign_links(visited_urls_file='visited_urls_clien.txt'):
     # Read visited URLs from file
     try:
@@ -28,7 +29,7 @@ def find_naver_campaign_links(visited_urls_file='visited_urls_clien.txt'):
     # Initialize a list to store campaign links
     campaign_links = []
 
-    # Check each Naver link
+    # Check each naver_links
     for link in naver_links:
         full_link = urljoin(base_url, link)
         print("naver_links - " + full_link)
@@ -37,6 +38,7 @@ def find_naver_campaign_links(visited_urls_file='visited_urls_clien.txt'):
 
         res = requests.get(full_link)
         inner_soup = BeautifulSoup(res.text, 'html.parser')
+
 
         # Find all links that start with the campaign URL
         for a_tag in inner_soup.find_all('a', href=True):
