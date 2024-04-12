@@ -6,21 +6,23 @@ base_url = "https://www.ppomppu.co.kr/zboard/zboard.php?id=coupon"
 page_url = "https://www.ppomppu.co.kr/zboard/zboard.php?"
 
 def find_naver_campaign_links(visited_urls_file='visited_urls_ppomppu.txt'):
+    # Read visited URLs from file
     try:
         with open(visited_urls_file, 'r') as file:
             visited_urls = set(file.read().splitlines())
     except FileNotFoundError:
         visited_urls = set()
 
+    # Send a request to the base URL
     response = requests.get(base_url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
+    # Find all span elements with class 'list_subject' and get 'a' tags
     list_subject_links = soup.find_all('td', class_='list_vspace')
 
     naver_links = []
     for span in list_subject_links:
         a_tag = span.find('a', href=True)
-
         if a_tag and '네이버' in a_tag.text:
             naver_links.append(a_tag['href'])
 
@@ -36,9 +38,9 @@ def find_naver_campaign_links(visited_urls_file='visited_urls_ppomppu.txt'):
 
         res = requests.get(full_link)
         inner_soup = BeautifulSoup(res.text, 'html.parser')
-
         campaign_a_tags = inner_soup.find_all('a', href=True)
 
+        # Find all links that start with the campaign URL
         for a_tag in campaign_a_tags:
             campaign_link = a_tag.get_text().strip()
 
