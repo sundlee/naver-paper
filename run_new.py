@@ -57,24 +57,24 @@ print("ID input 클릭")
 username.click()
 # js를 사용해서 붙여넣기 발동 <- 왜 일부러 이러냐면 pypyautogui랑 pyperclip를 사용해서 복붙 기능을 했는데 운영체제때문에 안되서 이렇게 한거다.
 driver2.execute_script("arguments[0].value = arguments[1]", username, input_id)
-time.sleep(1)
+time.sleep(10)
 
 print("PW input 클릭")
 pw.click()
 driver2.execute_script("arguments[0].value = arguments[1]", pw, input_pw)
-time.sleep(1)
+time.sleep(10)
 
 #입력을 완료하면 로그인 버튼 클릭
 print("로그인 버튼 클릭")
 driver2.find_element(By.CLASS_NAME, "btn_login").click()
-time.sleep(1)
+time.sleep(10)
 
 # new.save 등록
 # new.dontsave 등록 안함
 print("등록 안함 버튼 클릭")
 try:
     driver2.find_element(By.ID, "new.dontsave").click()
-    time.sleep(1)
+    time.sleep(10)
 except:
     pass
 
@@ -89,7 +89,7 @@ while True:
         exit()
     print(f"로그인 되지 않음 #{try_login_count}")
     print(f"페이지 타이틀 : {page_title}")
-    time.sleep(1)
+    time.sleep(10)
     try_login_count += 1
 
 for link in campaign_links:
@@ -104,6 +104,6 @@ for link in campaign_links:
         print("알럿창 없음")
         pageSource = driver2.page_source
         # print(pageSource)
-    time.sleep(1)
+    time.sleep(10)
 
-time.sleep(30)
+time.sleep(10)
