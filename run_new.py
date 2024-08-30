@@ -106,4 +106,4 @@ for link in campaign_links:
         # print(pageSource)
     time.sleep(1)
 
-time.sleep(10)
+time.sleep(30)
