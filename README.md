@@ -65,5 +65,3 @@ $ python run_new.py
 * https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/win64/chromedriver-win64.zip
 * https://help.naver.com/service/5640/contents/10219?lang=ko
 * https://help.naver.com/service/5640/contents/8584?lang=ko
-
-테스트 메시지입니다. 
