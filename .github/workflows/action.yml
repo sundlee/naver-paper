@@ -27,6 +27,5 @@ jobs:
         export PASSWORD=$PASSWORD
         python run_new.py
       env:
-        USERNAME: ${{ secrets.USERNAME }} # secret에 저장된 내용을 불러옴
+        USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
-        CREDENTIALENV : ${{ secrets.CREDENTIALENV }}
