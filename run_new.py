@@ -49,6 +49,9 @@ def init(id, pwd, ua, mobile_device, headless, newsave):
     #   <title>Naver Sign in</title>
     # ID page (successful logged-in) title for nid.naver.com
     #   <title>Naver ID</title>
+    
+    time.sleep(30)
+    
     if driver.title == "Naver ID" or driver.title == "네이버ID":
         return driver
 
