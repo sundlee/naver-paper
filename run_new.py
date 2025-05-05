@@ -101,20 +101,20 @@ def init(id, pwd, ua, mobile_device, headless, newsave):
 
     # 입력을 완료하면 로그인 버튼 클릭
     driver2.find_element(By.CLASS_NAME, "btn_login").click()
-    time.sleep(30)
+    time.sleep(100)
 
     # new.save 등록
     # new.dontsave 등록 안함
-    try:
-        if newsave is True:
-            driver2.find_element(By.ID, "new.save").click()
-        else:
-            driver2.find_element(By.ID, "new.dontsave").click()
-        time.sleep(1)
-    except Exception as e:
-        # Print warning and go to login page.
-        logging.warning("%s: new save or dontsave 오류", e)
-        driver.get("https://nid.naver.com")
+#    try:
+#        if newsave is True:
+#            driver2.find_element(By.ID, "new.save").click()
+#        else:
+#            driver2.find_element(By.ID, "new.dontsave").click()
+#        time.sleep(1)
+#    except Exception as e:
+#        # Print warning and go to login page.
+#        logging.warning("%s: new save or dontsave 오류", e)
+#        driver.get("https://nid.naver.com")
 
     try_login_limit = os.getenv("TRY_LOGIN", 3)
     try_login_count = 1
