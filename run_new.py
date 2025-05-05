@@ -243,7 +243,7 @@ if __name__ == "__main__":
         if(pw is None and pw is None and cd_env is None):
             print('not setting USERNAME / PASSWORD')
             exit()
-        if cd_env is None:
+        if cd_env is None or cd_env == "":
             cd_obj = [{"id": id, "pw": pw}]
         else:
             cd_obj = json.loads(cd_env)
