@@ -23,12 +23,12 @@ jobs:
         pip install -r requirements.txt
     - name: Run
       run: |
-        echo "[{"                                      > ./accounts.json
+        echo "\[\{"                                      > ./accounts.json
         echo "  \"id\": \"" + $USERNAME + "\","       >> ./accounts.json
         echo "  \"pw\": \"" + $PASSWORD + "\","       >> ./accounts.json
         echo "  \"ua\": null, "                       >> ./accounts.json
         echo "  \"mobile_device\": \"iPhone 15 Pro\"" >> ./accounts.json
-        echo "}]"                                     >> ./accounts.json
+        echo "\}\]"                                     >> ./accounts.json
         python run_new.py -cf ./accounts.json
       env:
         USERNAME: ${{ secrets.USERNAME }} # secret에 저장된 내용을 불러옴
