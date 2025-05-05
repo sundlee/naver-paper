@@ -95,13 +95,13 @@ def init(id, pwd, ua, mobile_device, headless, newsave):
         time.sleep(1)
 
     # Enable IP Security
-    if not driver2.find_element(By.CLASS_NAME, "switch_checkbox").is_selected():
-        driver2.find_element(By.CLASS_NAME, "switch_btn").click()
-        time.sleep(1)
+#    if not driver2.find_element(By.CLASS_NAME, "switch_checkbox").is_selected():
+#        driver2.find_element(By.CLASS_NAME, "switch_btn").click()
+#        time.sleep(1)
 
     # 입력을 완료하면 로그인 버튼 클릭
     driver2.find_element(By.CLASS_NAME, "btn_login").click()
-    time.sleep(1)
+    time.sleep(30)
 
     # new.save 등록
     # new.dontsave 등록 안함
