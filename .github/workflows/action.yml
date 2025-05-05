@@ -23,7 +23,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run
       run: |
-        export CREDENTIALENV=$CREDENTIALENV
         python run_new.py
       env:
         USERNAME: ${{ secrets.USERNAME }}
